@@ -13,11 +13,11 @@
           event.preventDefault()
           event.stopPropagation()
           document.getElementById('btncedula6').setAttribute("disabled", ""); //Se agregó el else con esta sentencia para que si el usuario cambia un dato y no es válido, vuelve a desactivar la generación de cédula
-        }else{
+        } else {
           document.getElementById('btncedula6').removeAttribute('disabled'); //Quita el atributo disabled del botón para generar la cédula 0
         }
         form.classList.add('was-validated')
-        
+
       }, false)
     })
 })()
