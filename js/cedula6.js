@@ -39,9 +39,11 @@ cedula6 = () => {
     doc.text(mun_Personal,137,80);
     doc.text(entfed_Personal,42.7,87);
     doc.text(noCartilla_Personal,52.7,100.8);
-    doc.text(diaLiberacion_Personal,138.5,100.8);
-    doc.text(MesLiberacion_Personal,161.5,100.8);
-    doc.text(yearLiberacion_Personal,183,100.8);
+    if (fechaLiberacion_Personal != '') {
+        doc.text(diaLiberacion_Personal, 138.5, 100.8);
+        doc.text(MesLiberacion_Personal, 161.5, 100.8);
+        doc.text(yearLiberacion_Personal, 183, 100.8);
+    }
     doc.text(observacionesCartilla_Personal,53,108.3);
     doc.text(edoCivil_Personal,127.5,108.3);
     doc.text(tel_Personal,31,115.3);
