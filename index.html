@@ -10,9 +10,9 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
-  </script>
+    </script>
 
   <!--JSPDF-->
   <script src="/dist/jspdf.min.js"></script>
@@ -25,9 +25,11 @@
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
   </script>
   -->
-  
+
   <script src="/js/cedula6.js"></script>
-  <script src="/js/img.js"></script> <!--Imagenes en Base64-->
+  <script src="/js/pagina_1.js"></script> <!--Imagenes en Base64-->
+  <script src="/js/pagina_2.js"></script> <!--Imagenes en Base64-->
+  <script src="/js/pagina_3.js"></script> <!--Imagenes en Base64-->
   <link rel="stylesheet" href="/css/style.css">
   <link href="/css/form-validation.css" rel="stylesheet">
 
@@ -39,7 +41,6 @@
 
 
   <title>Llenado Cédula 6 (De Alumno)</title>
-  <link  rel="icon"   href="img/favicon.png" type="image/jpg" />
 
 </head>
 
@@ -49,7 +50,7 @@
     <main>
       <div class="py-3 text-center">
         <img class="d-block mx-auto mb-1" src="/img/logo.png" alt="" width="250" height="auto">
-        <h2>Generador de Cédula 6</h2>
+        <h2>Generador de Cédula 6 (Formato 2023)</h2>
         <p class="lead">Para Alta de Cursos en los Centros de Capacitación.</p>
       </div>
 
@@ -135,7 +136,7 @@
             <div class="col-md-4">
               <label for="colonia_Personal" class="form-label">Colonia:</label>
               <input type="text" name="colonia_Personal" class="form-control text-uppercase" id="colonia_Personal"
-                placeholder="" pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,30}" required>
+                placeholder="" pattern="[A-Za-z0-9 ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,38}" required>
               <div class="invalid-feedback">
                 Por favor escribe tu colonia.
               </div>
@@ -292,8 +293,8 @@
 
             <div class="col-md-6">
               <label for="observacionesCartilla_Personal" class="form-label">Observaciones Cartilla:</label>
-              <input name="observacionesCartilla_Personal" class="form-control" id="observacionesCartilla_Personal" placeholder=""
-              pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,50}">
+              <input name="observacionesCartilla_Personal" class="form-control" id="observacionesCartilla_Personal"
+                placeholder="" pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,33}">
               <div class="invalid-feedback">
                 Por favor escribe una observación válida.
               </div>
@@ -343,9 +344,12 @@
               </div>
             </div>
 
-            <div class="col-md-2">
-              <label class="form-check-label" for="certEsc_Primaria">Certificado</label>
-              <input class="form-check-input" type="checkbox" id="certEsc_Primaria">
+            <div class="col-md-2 d-flex flex-column">
+              <label class="form-check-label" for="certEsc_Primaria" style="padding-bottom: 4px;">Certificado</label>
+              <input class="form-check-input w-25" type="checkbox" id="certEsc_Primaria" style="padding-top: 35px;" required>
+              <div class="invalid-feedback">
+                Por favor da check.
+              </div>
             </div>
 
             <!------------Secundaria------------>
@@ -376,9 +380,12 @@
               </div>
             </div>
 
-            <div class="col-md-2">
-              <label class="form-check-label" for="certEsc_Secundaria">Certificado</label>
-              <input class="form-check-input" type="checkbox" id="certEsc_Secundaria">
+            <div class="col-md-2 d-flex flex-column">
+              <label class="form-check-label" for="certEsc_Secundaria" style="padding-bottom: 4px;">Certificado</label>
+              <input class="form-check-input w-25" type="checkbox" id="certEsc_Secundaria" style="padding-top: 35px;" required>
+              <div class="invalid-feedback">
+                Por favor da check.
+              </div>
             </div>
 
             <!------------Preparatoria------------>
@@ -409,9 +416,12 @@
               </div>
             </div>
 
-            <div class="col-md-2">
-              <label class="form-check-label" for="certEsc_Preparatoria">Certificado</label>
-              <input class="form-check-input" type="checkbox" id="certEsc_Preparatoria">
+            <div class="col-md-2 d-flex flex-column">
+              <label class="form-check-label" for="certEsc_Preparatoria" style="padding-bottom: 4px;">Certificado</label>
+              <input class="form-check-input w-25" type="checkbox" id="certEsc_Preparatoria" style="padding-top: 35px;" required>
+              <div class="invalid-feedback">
+                Por favor da check.
+              </div>
             </div>
 
             <!------------Estudios Superiores------------>
@@ -441,14 +451,14 @@
               </div>
             </div>
 
-            <div class="col-md-2">
-              <label class="form-check-label" for="certEsc_Superiores">Certificado</label>
-              <input class="form-check-input" type="checkbox" id="certEsc_Superiores">
+            <div class="col-md-2 d-flex flex-column">
+              <label class="form-check-label" for="certEsc_Superiores" style="padding-bottom: 4px;">Certificado</label>
+              <input class="form-check-input w-25" type="checkbox" id="certEsc_Superiores" style="padding-top: 35px;">
             </div>
 
             <!------------Datos de la persona a notificar en caso de accidente------------>
             <h5>Datos de la persona a notificar en caso de accidente</h5>
-            
+
             <div class="col-md-4">
               <label for="nombres_Acc" class="form-label">Nombre(s):</label>
               <input type="text" name="nombres_Acc" class="form-control text-uppercase" id="nombres_Acc" placeholder=""
@@ -590,7 +600,7 @@
               </div>
             </div>
 
-            
+
             <!--
             <div class="col-6">
               <label for="estado" class="form-label">Correo electrónico</label>
@@ -603,12 +613,13 @@
                 </div>
               </div>
             </div>-->
-            
+
             <div class="d-inline-flex justify-content-center">
-              <p class="p-2 border bg-black rounded-3 primary text-white fs-5 text-center fw-bold text-uppercase mb-1">favor de
+              <p class="p-2 border bg-black rounded-3 primary text-white fs-5 text-center fw-bold text-uppercase mb-1">
+                favor de
                 descargar el pdf al generarlo, porque no se guarda.</p>
             </div>
-          
+
 
             <div class="col-6">
               <!--<input type="submit" class="w-100 btn btn-primary btn-lg" name="insert" value="Enviar">-->
@@ -623,7 +634,7 @@
 
           </div>
         </form>
-        
+
     </main>
 
   </div>
@@ -649,6 +660,13 @@
 
     //submit
     function sub() {
+      function agregarCero(numero) {
+        if (numero < 10) {
+          return "0" + numero.toString();
+        } else {
+          return numero.toString();
+        }
+      }
       CURP_Personal = document.getElementById("CURP_Personal").value.toUpperCase();
       RFC_Personal = document.getElementById("RFC_Personal").value.toUpperCase();
       aPaterno_Personal = document.getElementById("aPaterno_Personal").value.toUpperCase();
@@ -667,6 +685,14 @@
       lugarNacimiento_Personal = document.getElementById("lugarNacimiento_Personal").value.toUpperCase();
       noCartilla_Personal = document.getElementById("noCartilla_Personal").value.toUpperCase();
       fechaLiberacion_Personal = document.getElementById("fechaLiberacion_Personal").value.toUpperCase();
+      yearLiberacion_Personal = new Date(fechaLiberacion_Personal).getUTCFullYear().toString();
+      // yearLiberacion_Personal = yearLiberacion_Personal.toISOString();
+      MesLiberacion_Personal = (new Date(fechaLiberacion_Personal).getUTCMonth() + 1).toString();
+      MesLiberacion_Personal = agregarCero(MesLiberacion_Personal);
+      // MesLiberacion_Personal = MesLiberacion_Personal.toISOString();
+      diaLiberacion_Personal = new Date(fechaLiberacion_Personal).getUTCDate().toString();
+      diaLiberacion_Personal = agregarCero(diaLiberacion_Personal);
+      // diaLiberacion_Personal = diaLiberacion_Personal.toISOString();
       observacionesCartilla_Personal = document.getElementById("observacionesCartilla_Personal").value.toUpperCase();
       edoCivil_Personal = document.getElementById("edoCivil_Personal").value.toUpperCase();
 
@@ -674,19 +700,19 @@
       deEsc_Primaria = document.getElementById("deEsc_Primaria").value.toUpperCase();
       aEsc_Primaria = document.getElementById("aEsc_Primaria").value.toUpperCase();
       certEsc_Primaria = document.getElementById("certEsc_Primaria").value.toUpperCase();
-      if (document.getElementById('certEsc_Primaria').checked){certEsc_Primaria = "X"}else{certEsc_Primaria=""};
+      if (document.getElementById('certEsc_Primaria').checked) { certEsc_Primaria = "SI" } else { certEsc_Primaria = "" };
       nombEsc_Secundaria = document.getElementById("nombEsc_Secundaria").value.toUpperCase();
       deEsc_Secundaria = document.getElementById("deEsc_Secundaria").value.toUpperCase();
       aEsc_Secundaria = document.getElementById("aEsc_Secundaria").value.toUpperCase();
-      if (document.getElementById('certEsc_Secundaria').checked){certEsc_Secundaria = "X"}else{certEsc_Secundaria=""};
+      if (document.getElementById('certEsc_Secundaria').checked) { certEsc_Secundaria = "SI" } else { certEsc_Secundaria = "" };
       nombEsc_Preparatoria = document.getElementById("nombEsc_Preparatoria").value.toUpperCase();
       deEsc_Preparatoria = document.getElementById("deEsc_Preparatoria").value.toUpperCase();
       aEsc_Preparatoria = document.getElementById("aEsc_Preparatoria").value.toUpperCase();
-      if (document.getElementById('certEsc_Preparatoria').checked){certEsc_Preparatoria = "X"}else{certEsc_Preparatoria=""};
+      if (document.getElementById('certEsc_Preparatoria').checked) { certEsc_Preparatoria = "SI" } else { certEsc_Preparatoria = "" };
       nombEsc_Superiores = document.getElementById("nombEsc_Superiores").value.toUpperCase();
       deEsc_Superiores = document.getElementById("deEsc_Superiores").value.toUpperCase();
       aEsc_Superiores = document.getElementById("aEsc_Superiores").value.toUpperCase();
-      if (document.getElementById('certEsc_Superiores').checked){certEsc_Superiores = "X"}else{certEsc_Superiores=""};
+      if (document.getElementById('certEsc_Superiores').checked) { certEsc_Superiores = "SI" } else { certEsc_Superiores = "" };
 
       aPaterno_Acc = document.getElementById("aPaterno_Acc").value.toUpperCase();
       aMaterno_Acc = document.getElementById("aMaterno_Acc").value.toUpperCase();
@@ -710,7 +736,7 @@
   </script>
   <script src="/js/cedula6.js"></script>
   <script src="/js/form-validation.js"></script>
-  
+
 
 </body>
 
